@@ -1,10 +1,12 @@
 function handleCatClicks() {
-  $('.thumbnail').on('click', e => {
-    const targetCat = $(e.currentTarget);
+  $('.thumbnail').click (event => {
 
-    const otherCat = $('.thumbnail').not(targetCat);
-    
-    console.log(e.target);
+    const thumbSrc = $(event.currentTarget).find('img').attr('src');
+
+    const thumbAlt = $(event.currentTarget).find('img').attr('alt');
+
+    $('.hero img').attr('src', thumbSrc);
+    $('.hero img').attr('alt', thumbAlt);
   });
 }
 
